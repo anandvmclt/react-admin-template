@@ -8,7 +8,7 @@ const { SearchBar } = Search;
 const { columns, data} = props;
 const customTotal = (from, to, size) => (
   <span className="react-bootstrap-table-pagination-total">
-    Showing { from } to { to } of { size } Results
+     Showing { from } to { to } of { size } Results
   </span>
 );
 
@@ -35,8 +35,10 @@ const options = {
   }, {
     text: '10', value: 10
   }, {
+    text: '25', value: 25
+  }, {
     text: 'All', value: data.length
-  }] // A numeric array is also available. the purpose of above example is custom the text
+  }] 
 };
 
 return (
@@ -45,15 +47,15 @@ return (
   keyField="id"
   data={ data }
   columns={ columns }
-  search
->
+  search>
   {
     props => (
-      <div>
-        <h3>Input something at below input field:</h3>
-        <SearchBar { ...props.searchProps } />
+      <div className='naac-table'>
         <hr />
-
+      
+        <div className='naac-table-search'> 
+        <SearchBar { ...props.searchProps } />
+        </div>
         <BootstrapTable  { ...props.baseProps }
          keyField='id' data={ data } columns={ columns } pagination={ paginationFactory(options) } 
          striped /> 

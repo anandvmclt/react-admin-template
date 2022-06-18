@@ -1,3 +1,4 @@
+import './App.css';
 import { MainRouter } from "./components/Router";
 import Home from "./components/Pages/Home";
 

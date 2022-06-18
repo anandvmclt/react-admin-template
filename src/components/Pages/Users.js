@@ -40,8 +40,10 @@ const Users = () => {
     { dataField: "id", text: "Id", sort: true },
     { dataField: "username", text: "User Name", sort: true },
     { dataField: "email", text: "Email", sort: false },
-    {
-      dataField: "status", text: "Action", sort: false,
+    { dataField: "status", text: "Status", sort: false,  formatter: (cell, row) =>(
+      cell ? "ACTIVE" : "PENDING"
+      )},
+    {dataField: "", text: "Action", sort: false,
       formatter: (cell, row) => rankFormatter(row, 
         {
           cell: ( data ) => (
