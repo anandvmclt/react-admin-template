@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import Navbar from '../Navbar'
 import Table from "../Tables"
 
 
@@ -72,12 +71,10 @@ const Users = () => {
 
 
   return (
-    <>
-      <Navbar />
-
+    <div className="d-flex">
       <Table columns={columns} data={data} />
-
-    </>
+      {/* <Table columns={columns} data={data} /> */}
+    </div>
   )
 }
 
